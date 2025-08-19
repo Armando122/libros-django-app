@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PyBookS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-5">
+    <!-- Información del producto en card horizontal -->
+    <div class="card mb-5 shadow">
+      <div class="row g-0">
+        <div class="col-md-5">
+          <img src="{{ libro.portada }}" alt="Imagen del Producto" class="product-image" height="600" />
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <h2 class="card-title">{{ libro.titulo }}</h2>
+            <p class="text-muted">ISBN: {{ libro.isbn }}</p>
+            <p class="card-text">Sinopsis: {{ libro.sinopsis }}</p>
+            <h4 class="text-primary">Fecha de publicación: {{ libro.fecha_publicacion }}</h4>
+{#            <button class="btn btn-success">Añadir al carrito</button>#}
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-primary" href="{% url 'listar' %}">Regresar</a>
+
+    <!-- Sección de comentarios futura Implementación (por revisar) -->
+{#    <div class="mb-4">#}
+{#      <h4>Comentarios</h4>#}
+{##}
+{#    {% if user.is_authenticated %}#}
+{#    	<form class="mb-3" action="{% url 'agregar-comentario' producto.id %}" method="post">#}
+{#          {% csrf_token %}#}
+{##}
+{#        <div class="mb-2">#}
+{#            {{ formulario.texto_comentario }}#}
+{#        </div>#}
+{#        <button type="submit" class="btn btn-primary">Publicar Comentario</button>#}
+{#      </form>#}
+{#    {% endif %}#}
+{##}
+      <!-- Lista de comentarios por permisos  {# {% if perms.productos.[permiso] %}  -->#}
+{#        {% for comentario in comentarios %}#}
+{#        <div class="comment">#}
+{#            <p>#}
+{#                <strong>{{ comentario.usuario.username }}</strong> <small class="text-muted">{{ comentario.fecha_creacion }}</small>#}
+{#            </p>#}
+{#            <p>{{ comentario.texto_comentario }}</p>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+
+</div>
+</body>
+</html>

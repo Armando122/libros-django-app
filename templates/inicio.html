@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>PyBookS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 <body>
+
+<div class="container my-5">
+<a class="btn btn-primary" href="{% url 'crear' %}">Añadir</a>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for lib in libros %}
+        <div class="col">
+          <div class="card h-100">
+            <img src="{{ lib.portada }}" class="card-img-top" alt="Portada del libro" />
+            <div class="card-body">
+              <h5 class="card-title">{{ lib.titulo }}</h5>
+              <p class="card-text">{{ lib.isbn }}</p>
+              <p class="fw-bold">{{ lib.fecha_publicacion }}</p>
+            </div>
+            <div class="card-footer text-center">
+              <a class="btn btn-primary" href="{% url 'detalles' libro_id=lib.id %}">Detalles</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PyBookS - Crear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-5">
+    <div class="container">
+
+
+    </div>
+    <form enctype="multipart/form-data" action="{% url 'crear' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Titulo</span>
+            {{ form.titulo }}
+        </div>
+
+        <div class="form-group mb-3">
+            <span class="input-group-text" id="basic-addon1">ISBN</span>
+            {{ form.isbn }}
+        </div>
+
+        <div class="form-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Sinopsis</span>
+            {{ form.sinopsis }}
+        </div>
+
+        <div class="form-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Fecha de publicación</span>
+            {{ form.fecha_publicacion }}
+        </div>
+
+         <div class="form-group">
+             <label for="FormControlFile1">Elegir imagen</label>
+{#             <input type="file" class="form-control-file" id="FormControlFile1">#}
+             {{ form.portada }}
+         </div>
+        <button type="submit" class="button btn btn-primary">Añadir</button>
+    </form>
+    <br>
+    <a class="btn btn-danger" href="{% url 'listar' %}">Cancelar</a>
+
+</div>
+
+</body>
+</html>

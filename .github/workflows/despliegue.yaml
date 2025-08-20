@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hola Mundoo
-        run: echo "Hola mundo, desde actions"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: ls
+        run: ls -la

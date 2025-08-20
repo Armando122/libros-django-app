@@ -11,5 +11,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: ls
-        run: ls -la
+      - name: Configuracion SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.LLAVE_SSH }}
+
+      - name: Archivo de prueba
+        run: ssh -o StrictHostKeyChecking=no root@${{ secrets.IP_SERVIDOR }} touch prueba.txt

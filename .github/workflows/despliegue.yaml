@@ -1,0 +1,12 @@
+name: Despliegue al servidor
+
+on:
+  - push
+
+jobs:
+  despliegue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hola Mundoo
+        run: echo "Hola mundo, desde actions"

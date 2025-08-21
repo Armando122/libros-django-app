@@ -3,6 +3,9 @@ name: Despliegue al servidor
 on:
   - push
 
+env:
+  IP_SERVIDOR: ${{ IP_SERVIDOR }}
+
 jobs:
   despliegue:
     runs-on: ubuntu-latest
@@ -16,5 +19,5 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.LLAVE_SSH }}
 
-      - name: Archivo de prueba
-        run: ssh -o StrictHostKeyChecking=no root@${{ secrets.IP_SERVIDOR }} touch prueba.txt
+      - name: Git pull
+        run: bash despliegue.sh

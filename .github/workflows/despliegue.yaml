@@ -4,7 +4,7 @@ on:
   - push
 
 env:
-  dir_ip: ${{ IP_SERVIDOR }}
+  dir_ip: ${{ secrets.IP_SERVIDOR }}
 
 jobs:
   despliegue:

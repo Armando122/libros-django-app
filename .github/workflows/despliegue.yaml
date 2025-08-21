@@ -4,7 +4,7 @@ on:
   - push
 
 env:
-  IP_SERVIDOR: ${{ IP_SERVIDOR }}
+  dir_ip: ${{ IP_SERVIDOR }}
 
 jobs:
   despliegue:

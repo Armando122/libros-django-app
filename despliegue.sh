@@ -1,4 +1,4 @@
-ssh -o StrictHostKeyChecking=no root@$IP_SERVIDOR <<SSH
+ssh -o StrictHostKeyChecking=no root@$dir_ip <<SSH
 
 cd /home/armando/proyectos/libros-django-app
 

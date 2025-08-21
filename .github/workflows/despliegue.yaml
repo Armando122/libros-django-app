@@ -1,7 +1,14 @@
 name: Despliegue al servidor
 
 on:
-  - push
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+  push:
+    branches:
+      - main
 
 env:
   dir_ip: ${{ secrets.IP_SERVIDOR }}
